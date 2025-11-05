@@ -1,11 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart BMI App 3.0</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Good morning</h1>
+
+  <!-- Mobile App Container -->
+  <div class="app-container">
+
+    <!-- Header -->
+    <header>
+      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Avatar" class="avatar">
+      <div class="user-info">
+        <h2>Hi, Aman 👋</h2>
+        <p>Welcome to your fitness tracker</p>
+      </div>
+      <div class="icons">
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-cog"></i>
+      </div>
+    </header>
+
+    <!-- Home Screen -->
+    <div class="home" id="home">
+      <h3>Smart BMI Calculator</h3>
+      <p>Check your Body Mass Index & get diet tips</p>
+      <button class="btn start-btn" onclick="openCalculator()">Start Now</button>
+    </div>
+
+    <!-- Calculator Screen -->
+    <div class="calculator hidden" id="calculator">
+      <h3>Calculate Your BMI</h3>
+
+      <div class="inputs">
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" placeholder="Enter your weight">
+
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" placeholder="Enter your height">
+      </div>
+
+      <button onclick="calculateBMI()" class="btn calc-btn">Calculate</button>
+
+      <div class="circle">
+        <div class="inner-circle">
+          <span id="bmi-value">--</span>
+        </div>
+      </div>
+
+      <div class="result-box">
+        <p id="bmi-category">Your result will appear here</p>
+        <div id="diet-card" class="diet-card">
+          <h4>🍎 Diet Recommendation</h4>
+          <p id="diet-advice">Your diet tip will appear here</p>
+        </div>
+      </div>
+
+      <button class="btn back-btn" onclick="goBack()">⬅ Back</button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav>
+      <i class="fas fa-home active"></i>
+      <i class="fas fa-heartbeat"></i>
+      <i class="fas fa-chart-pie"></i>
+      <i class="fas fa-user"></i>
+    </nav>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a2e0e6a9d1.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>
